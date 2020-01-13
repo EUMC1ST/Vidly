@@ -149,6 +149,18 @@
     <Compile Include="Migrations\202001130121374_ApplyAnnotationsToCustomerName.designer.cs">
       <DependentUpon>202001130121374_ApplyAnnotationsToCustomerName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001131619568_AddMembershipTypeName.cs" />
+    <Compile Include="Migrations\202001131619568_AddMembershipTypeName.designer.cs">
+      <DependentUpon>202001131619568_AddMembershipTypeName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001131624129_UpdateMembershipTypeName.cs" />
+    <Compile Include="Migrations\202001131624129_UpdateMembershipTypeName.designer.cs">
+      <DependentUpon>202001131624129_UpdateMembershipTypeName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001131639059_UpdateMembershipTypeNames.cs" />
+    <Compile Include="Migrations\202001131639059_UpdateMembershipTypeNames.designer.cs">
+      <DependentUpon>202001131639059_UpdateMembershipTypeNames.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -335,6 +347,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001130121374_ApplyAnnotationsToCustomerName.resx">
       <DependentUpon>202001130121374_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001131619568_AddMembershipTypeName.resx">
+      <DependentUpon>202001131619568_AddMembershipTypeName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001131624129_UpdateMembershipTypeName.resx">
+      <DependentUpon>202001131624129_UpdateMembershipTypeName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001131639059_UpdateMembershipTypeNames.resx">
+      <DependentUpon>202001131639059_UpdateMembershipTypeNames.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
