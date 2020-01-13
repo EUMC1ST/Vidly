@@ -14,10 +14,20 @@
         <dt>
             @Html.DisplayNameFor(model => model.Name)
             @Html.DisplayNameFor(model => model.Id)
+            @if (Model.BirthDay.HasValue)
+            {
+                @Html.DisplayNameFor(model => model.BirthDay)
+            }
+
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Name)
             @Html.DisplayFor(model => model.Id)
+            @if (Model.BirthDay.HasValue)
+            {
+                @Html.DisplayFor(model => model.BirthDay)
+            }
+
         </dd>
 
     </dl>

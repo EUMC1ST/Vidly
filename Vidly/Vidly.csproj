@@ -161,6 +161,26 @@
     <Compile Include="Migrations\202001131639059_UpdateMembershipTypeNames.designer.cs">
       <DependentUpon>202001131639059_UpdateMembershipTypeNames.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001131712443_AddBirthDayToCustomer.cs" />
+    <Compile Include="Migrations\202001131712443_AddBirthDayToCustomer.designer.cs">
+      <DependentUpon>202001131712443_AddBirthDayToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001131727130_ApplyAnnottationsToCustomerBirthDay.cs" />
+    <Compile Include="Migrations\202001131727130_ApplyAnnottationsToCustomerBirthDay.designer.cs">
+      <DependentUpon>202001131727130_ApplyAnnottationsToCustomerBirthDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001131729198_AddBirthDayToCustomer1.cs" />
+    <Compile Include="Migrations\202001131729198_AddBirthDayToCustomer1.designer.cs">
+      <DependentUpon>202001131729198_AddBirthDayToCustomer1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001131735133_AddNewCustomer.cs" />
+    <Compile Include="Migrations\202001131735133_AddNewCustomer.designer.cs">
+      <DependentUpon>202001131735133_AddNewCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001131743172_AddAnotherCustomer.cs" />
+    <Compile Include="Migrations\202001131743172_AddAnotherCustomer.designer.cs">
+      <DependentUpon>202001131743172_AddAnotherCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -356,6 +376,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001131639059_UpdateMembershipTypeNames.resx">
       <DependentUpon>202001131639059_UpdateMembershipTypeNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001131712443_AddBirthDayToCustomer.resx">
+      <DependentUpon>202001131712443_AddBirthDayToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001131727130_ApplyAnnottationsToCustomerBirthDay.resx">
+      <DependentUpon>202001131727130_ApplyAnnottationsToCustomerBirthDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001131729198_AddBirthDayToCustomer1.resx">
+      <DependentUpon>202001131729198_AddBirthDayToCustomer1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001131735133_AddNewCustomer.resx">
+      <DependentUpon>202001131735133_AddNewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001131743172_AddAnotherCustomer.resx">
+      <DependentUpon>202001131743172_AddAnotherCustomer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

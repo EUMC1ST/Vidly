@@ -32,6 +32,7 @@ namespace Vidly.Controllers
         }
         public ActionResult GetCustomerDetails(int id)
         {
+            return View("Details", _context.Customers.SingleOrDefault(c => c.Id == id));
             return View("Details", GetCustomers().SingleOrDefault(c => c.Id == id));
             //foreach (var customer in GetCustomers())
             //{

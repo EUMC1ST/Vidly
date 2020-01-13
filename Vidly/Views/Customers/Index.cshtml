@@ -18,7 +18,7 @@
                 Customer
             </th>
             <th>
-                Discount Rate
+                MemberShipType Name
             </th>
         </tr>
 
@@ -31,7 +31,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
-                <td> @Html.DisplayFor(modelItem => item.MembershipType.DiscountRate) %</td>
+                <td> @Html.DisplayFor(modelItem => item.MembershipType.Name)</td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id })
                     @Html.ActionLink("Details", "GetCustomerDetails", "Customers", new { id = item.Id }, null)

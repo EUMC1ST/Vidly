@@ -17,5 +17,7 @@ namespace Vidly.Models
         public MembershipType MembershipType { get; set; }
         //This is a foreignkey used when don´t need the entire membeship object
         public byte MembershipTypeId { get; set; }
+        [DataType(DataType.Date)]
+        public Nullable<DateTime> BirthDay { get; set; }
     }
 }
