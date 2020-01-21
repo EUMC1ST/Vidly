@@ -8,9 +8,13 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Movie</h4>
+    <h4>@Model.Name</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <ul>
+        <li>@*@Html.DisplayNameFor(model => model.Genre)*@ @Html.DisplayName("Genre"):@Model.Genre.Name</li>
+        <li>@Html.DisplayNameFor(model => model.ReleaseDate):@Html.Display("ReleaseDate")</li>
+    </ul>
+    @*<dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Name)
             @Html.DisplayNameFor(model => model.Id)
@@ -21,9 +25,9 @@
             @Html.DisplayFor(model => model.Id)
 
 
-        </dd>
+        </dd>*@
 
-    </dl>
+    @*</dl>*@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |

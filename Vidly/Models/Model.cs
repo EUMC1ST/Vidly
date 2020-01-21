@@ -13,7 +13,10 @@ namespace Vidly.Models
         // If you wish to target a different database and/or database provider, modify the 'Model' 
         // connection string in the application configuration file.
 
-        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Customer> Customers { get; set;}
+        public DbSet<Movie> Movies { get; set;}
+        public DbSet<GenreType> GenreTypes { get; set;}
+
         public Model()
             : base("name=Model")
         {
