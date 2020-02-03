@@ -12,11 +12,17 @@ namespace Vidly.Models
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
+
+        [Display(Name="Subscribed to Newsletter?")]
         public bool IsSubscribedToNewsletter { get; set; }
+
         //This is s navigation property to use membershiptype object
         public MembershipType MembershipType { get; set; }
+
         //This is a foreignkey used when don´t need the entire membeship object
+        [Display(Name="Membership Type")]
         public byte MembershipTypeId { get; set; }
+
         [DataType(DataType.Date)]
         public Nullable<DateTime> BirthDay { get; set; }
     }

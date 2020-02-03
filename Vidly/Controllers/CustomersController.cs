@@ -11,25 +11,78 @@ namespace Vidly.Controllers
 {
     public class CustomersController : Controller
     {
-        public Model _context;
+        public ApplicationDbContext _context;
         public CustomersController()
         {
-            _context = new Model();
+            _context = new ApplicationDbContext();
         }
 
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();
         }
-        public Customer customer { get; set; }
+
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var customer =_context.Customers.FirstOrDefault(c => c.Id == id);
+            if (customer == null)
+                return HttpNotFound();
+
+            var viewModel = new NewCustomerViewModel()
+            {
+                Customer = customer,
+                MembershipTypes = _context.MembershipTypes.AsEnumerable()
+            };
+
+            return View("CustomerForm",viewModel);
+        }
+
+        //CREATE POST METHOD
+        //Attribute
+        [HttpPost]
+        public ActionResult Create(Customer customer)
+        {
+            if (customer.Id == 0)
+            {
+                _context.Customers.Add(customer);
+            }
+            else {
+                var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
+                customerInDb.Name = customer.Name;
+                customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
+                customerInDb.BirthDay = customer.BirthDay;
+            }
+            _context.SaveChanges();
+            return RedirectToAction("Index","Customers");
+        }
         // GET: Customers
         public ActionResult Index()
         {
-            //var customers = _context.Customers.ToList();
             var customers = _context.Customers.Include(c => c.MembershipType).ToList();
-            //var customers = GetCustomers();
             return View(customers);
         }
+
+        //CREATE FORM
+        [HttpGet]
+        public ActionResult New()
+        {
+            var membershipTypes = _context.MembershipTypes.ToList();
+            var viewModel = new NewCustomerViewModel
+            {
+                MembershipTypes = membershipTypes
+            };
+            return View("CustomerForm",viewModel);
+        }
+
+        //[HttpPost]
+        //public ActionResult New(Customer customer)
+        //{
+        //    return View();
+        //}
+
+
         public ActionResult GetCustomerDetails(int id)
         {
             var customerDetails = _context.Customers.SingleOrDefault(c => c.Id == id);
@@ -43,14 +96,6 @@ namespace Vidly.Controllers
             //    }
             //}
             //return View("Details", customer);
-        }
-        public List<Customer> GetCustomers()
-        {
-
-            return new List<Customer>{
-                new Customer{ Id = 1,Name="Edgar"},
-                new Customer{ Id = 2,Name="Anahi"}
-            };
         }
     }
 }

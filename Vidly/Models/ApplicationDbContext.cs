@@ -4,7 +4,7 @@ namespace Vidly.Models
     using System.Data.Entity;
     using System.Linq;
 
-    public class Model : DbContext
+    public class ApplicationDbContext : DbContext
     {
         // Your context has been configured to use a 'Model' connection string from your application's 
         // configuration file (App.config or Web.config). By default, this connection string targets the 
@@ -16,8 +16,9 @@ namespace Vidly.Models
         public DbSet<Customer> Customers { get; set;}
         public DbSet<Movie> Movies { get; set;}
         public DbSet<GenreType> GenreTypes { get; set;}
+        public DbSet<MembershipType> MembershipTypes { get; set; }
 
-        public Model()
+        public ApplicationDbContext()
             : base("name=Model")
         {
         }
