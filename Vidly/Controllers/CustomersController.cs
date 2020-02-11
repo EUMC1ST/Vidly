@@ -47,7 +47,7 @@ namespace Vidly.Controllers
             //Validation Data En
             if (!ModelState.IsValid)
             {
-                var viewModel = new ViewModels.NewCustomerViewModel()
+                    var viewModel = new ViewModels.NewCustomerViewModel()
                 {
                     Customer = customer,
                     MembershipTypes = _context.MembershipTypes.AsEnumerable()
@@ -83,6 +83,7 @@ namespace Vidly.Controllers
             var membershipTypes = _context.MembershipTypes.ToList();
             var viewModel = new NewCustomerViewModel
             {
+                Customer = new Customer(),
                 MembershipTypes = membershipTypes
             };
             return View("CustomerForm",viewModel);

@@ -11,17 +11,26 @@
 
 @{
     MvcForm mvcForm = Html.BeginForm("Create", "Customers", FormMethod.Post);
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @*@Html.ValidationSummary()*@
+    @Html.ValidationSummary(true, "Please fill the field", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.Name)
         @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
         @Html.ValidationMessageFor(model => model.Customer.Name,"", new { @class = "text-danger" })
 
     </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.MembershipTypeId)
+        @Html.DropDownListFor(m => m.Customer.MembershipTypeId,
+            new SelectList(Model.MembershipTypes,"id","name"),"-- Select Membership Type --",new { @class = "form-control" })
+        @*@Html.ValidationMessage("MembershipTypes", "", new { @class = "text-danger" })*@
+        @Html.ValidationMessageFor(model => model.Customer.MembershipTypeId,"", new { @class = "text-danger" })
+    </div>
 
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.BirthDay)
         @Html.TextBoxFor(m => m.Customer.BirthDay, "{0:dd MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.BirthDay)
     </div>
 
     <div class="form-group form-check">
@@ -29,13 +38,7 @@
         @Html.LabelFor(m => m.Customer.IsSubscribedToNewsletter, new { @class = "form-check-label" })
     </div>
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.Customer.MembershipTypeId)
-        @Html.DropDownListFor(m => m.Customer.MembershipTypeId,
-                    new SelectList(Model.MembershipTypes,"id","name"),"-- Select Membership Type --",new { @class = "form-control" })
-        @*@Html.ValidationMessage("MembershipTypes", "", new { @class = "text-danger" })*@
-        @Html.ValidationMessageFor(model => model.Customer.MembershipTypeId,"", new { @class = "text-danger" })
-    </div>
+
     @Html.HiddenFor(m => m.Customer.Id);
     <button type="submit" class="btn btn-primary">Save</button>
     mvcForm.EndForm();
