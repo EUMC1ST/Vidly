@@ -42,6 +42,7 @@ namespace Vidly.Controllers
         //CREATE POST METHOD
         //Attribute
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Customer customer)
         {
             //Validation Data En
